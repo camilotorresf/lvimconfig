@@ -38,6 +38,8 @@ lvim.builtin.which_key.mappings["fr"] = { ":Telescope resume<CR>", "Repeat Find"
 -- To Do
 lvim.builtin.which_key.mappings["tt"] = {
   "<cmd>lua require('telescope.builtin').grep_string({search=\"TODO camilo\"})<CR>", "My To Do list" }
+-- Trouble Toggle
+lvim.builtin.which_key.mappings["tr"] = { ":TroubleToggle<CR>", "Trouble" }
 
 -- Harpoon
 lvim.builtin.which_key.mappings["ha"] = { "<cmd>lua require'harpoon.mark'.add_file()<cr>", "Add File to Harpoon" }
@@ -127,10 +129,10 @@ linters.setup {
 
 -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 lvim.plugins = {
-  --     {
-  --       "folke/trouble.nvim",
-  --       cmd = "TroubleToggle",
-  --     },
+  {
+    "folke/trouble.nvim",
+    --       cmd = "TroubleToggle",
+  },
   { "ThePrimeagen/harpoon" },
 }
 
