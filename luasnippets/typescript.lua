@@ -17,7 +17,7 @@ return {
       description = "TypeScript log trace for debugging",
     },
     {
-      t("console.log('** "),
+      t("console.log('** CAMILO "),
       f(get_function_name),
       t(":"),
       f(get_line_number),
@@ -45,7 +45,7 @@ return {
       description = "TypeScript log trace for a variable",
     },
     {
-      t("console.log(`"),
+      t("console.log(`** CAMILO "),
       f(get_function_name),
       t(":"),
       f(get_line_number),
@@ -62,7 +62,7 @@ return {
       description = "TypeScript log trace for free text",
     },
     {
-      t("console.log('"),
+      t("console.log('** CAMILO "),
       f(get_function_name),
       t(":"),
       f(get_line_number),
