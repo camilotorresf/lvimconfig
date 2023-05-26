@@ -7,6 +7,10 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.relativenumber = true
 
+-- line breaks
+vim.opt.wrap = true
+vim.opt.linebreak = true
+
 -- general
 lvim.log.level = "info"
 lvim.format_on_save = {
