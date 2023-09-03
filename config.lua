@@ -142,6 +142,11 @@ lvim.plugins = {
     --       cmd = "TroubleToggle",
   },
   { "ThePrimeagen/harpoon" },
+  {
+    "stevearc/oil.nvim",
+    config = true,
+  },
+  { "dhruvasagar/vim-table-mode" },
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
