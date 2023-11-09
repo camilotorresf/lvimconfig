@@ -1,3 +1,9 @@
+-- Load my own global functions for debug
+P = function(value)
+  print(vim.inspect(value))
+  return value
+end
+
 --[[
  THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
  `lvim` is the global options object
@@ -33,6 +39,9 @@ lvim.keys.normal_mode["<C-h>"] = ":BufferLineCyclePrev<CR>"
 
 -- Close buffers
 lvim.keys.normal_mode["<S-q>"] = "<cmd>bdelete!<CR>"
+
+-- test plenary test files
+lvim.keys.normal_mode[" y"] = "<Plug>PlenaryTestFile"
 
 -- Telescope
 lvim.builtin.which_key.mappings["f"] = {}
@@ -147,6 +156,10 @@ lvim.plugins = {
     config = true,
   },
   { "dhruvasagar/vim-table-mode" },
+  { "nvim-lua/plenary.nvim" },
+  {
+    dir = "/home/camilo/programs/stackmap.nvim"
+  },
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
