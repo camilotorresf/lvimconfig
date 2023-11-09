@@ -72,7 +72,8 @@ lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without f
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 
 -- -- Change theme settings
--- lvim.colorscheme = "lunar"
+-- lvim.colorscheme = "dracula"
+-- lvim.colorscheme_bg = "dark"
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
@@ -96,7 +97,7 @@ lvim.builtin.treesitter.auto_install = true
 -- ---configure a server manually. IMPORTANT: Requires `:LvimCacheReset` to take effect
 -- ---see the full default list `:lua =lvim.lsp.automatic_configuration.skipped_servers`
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pylyzer" })
+-- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pylyzer" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
 -- require("lvim.lsp.manager").setup("pyright", opts)
 
@@ -117,16 +118,21 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pylyzer" })
 -- end
 
 -- -- linters, formatters and code actions <https://www.lunarvim.org/docs/languages#lintingformatting>
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
---   { command = "stylua" },
---   {
---     command = "prettier",
---     extra_args = { "--print-width", "100" },
---     filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue", "css", "scss", "less", "html",
---       "json", "jsonc", "yaml", "graphql", "handlebars" },
---   },
--- }
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  -- { command = "stylua" },
+  {
+    command = "prettier",
+    extra_args = { "--print-width", "100" },
+    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue", "css", "scss", "less", "html",
+      "json", "jsonc", "yaml", "graphql", "handlebars" },
+  },
+  {
+    command = "black",
+    extra_args = { "--line-length", "120" },
+    filetypes = { "python" },
+  },
+}
 -- local linters = require "lvim.lsp.null-ls.linters"
 -- linters.setup {
 --   { command = "flake8", filetypes = { "python" } },
@@ -156,10 +162,6 @@ lvim.plugins = {
     config = true,
   },
   { "dhruvasagar/vim-table-mode" },
-  { "nvim-lua/plenary.nvim" },
-  {
-    dir = "/home/camilo/programs/stackmap.nvim"
-  },
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
